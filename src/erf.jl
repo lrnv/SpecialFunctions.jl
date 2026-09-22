@@ -695,7 +695,7 @@ function _erfcinv(y::BigFloat)
         isfinite(x) || return x
     end
     sqrtπhalf = sqrtπ * big(0.5)
-    tol = 2eps(abs(x))
+    tol = 2eps(y)
     while true # Newton iterations
         Δx = sqrtπhalf * (erfc(x) - y) * exp(x^2)
         x += Δx
